@@ -29,7 +29,7 @@ contract Necromint is Ownable, ERC721, ERC721Enumerable {
 
         require(tokenId < 6669, "max supply");
         require(!_uniqueMap[keccak256(abi.encodePacked(spirit, soul))], "already resurrected");
-        require(spirit.ownerOf(soul) == address(0), "token is not dead (yet)");
+        require(spirit.ownerOf(soul) == address(0x000000000000000000000000000000000000dEaD), "token not in cementery (yet?)");
 
         ghost.tokenId = soul;
         ghost.contractAddress = address(spirit);
